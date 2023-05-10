@@ -139,9 +139,7 @@ export default class extends module {
      * @param {LocomotiveScroll} args - The Locomotive Scroll instance.
      */
     lazyLoad(args) {
-        lazyLoadImage(args.target, null, () => {
-            if(args.target.dataset.depixelate != undefined)
-                animDepixelate(args.target)
+        lazyLoadImage(args.obj.el, null, () => {
         })
     }
 }
