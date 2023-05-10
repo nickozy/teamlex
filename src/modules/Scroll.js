@@ -140,6 +140,7 @@ export default class extends module {
      */
     lazyLoad(args) {
         lazyLoadImage(args.obj.el, null, () => {
+            //callback
         })
     }
 }
