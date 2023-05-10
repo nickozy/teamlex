@@ -1,0 +1,36 @@
+{
+  "name": "teamlex",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "webpack": "webpack -w",
+    "start": "http-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nickozy/teamlex.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nickozy/teamlex/issues"
+  },
+  "homepage": "https://github.com/nickozy/teamlex#readme",
+  "dependencies": {
+    "@barba/core": "^2.9.7",
+    "@studio-freight/lenis": "^1.0.9",
+    "gsap": "^3.11.5",
+    "locomotive-scroll": "^4.1.4",
+    "modujs": "^1.4.2",
+    "modularload": "^1.2.8",
+    "swiper": "^9.2.3"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "webpack": "^5.80.0",
+    "webpack-cli": "^5.0.1"
+  }
+}
