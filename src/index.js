@@ -1,7 +1,6 @@
 import modular from "modujs";
 import * as modules from "./modules";
-
-const html = document.documentElement;
+import { html } from "./utils/environment";
 
 const appHeight = () => {
   const doc = document.documentElement;
