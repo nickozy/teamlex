@@ -21,6 +21,7 @@
   "homepage": "https://github.com/nickozy/teamlex#readme",
   "dependencies": {
     "@barba/core": "^2.9.7",
+    "@studio-freight/lenis": "^1.0.12",
     "babel": "^6.23.0",
     "gsap": "^3.11.5",
     "modujs": "^1.4.2",
