@@ -1,5 +1,5 @@
 import { module } from 'modujs';
-// import { lazyLoadImage } from "../utils/image";
+// import { lazyLoadImage, animDepixelate } from '../utils/image';
 import LocomotiveScroll from 'locomotive-scroll';
 import { html } from '../utils/environment'
 import gsap from 'gsap'
@@ -22,7 +22,6 @@ export default class extends module {
     // Lifecyle
     ///////////////
     init() {
-        console.log('init')
         if(html.scrollTop < 80) {
             html.classList.add('is-top')
         } else {
@@ -76,7 +75,6 @@ export default class extends module {
     // Callbacks
     ///////////////
     onScroll({ scroll, limit, velocity, direction, progress }) {
-        console.log(scroll)
         if (progress > this.lastProgress) {
             if (this.scrollDirection != 1) {
                 this.lastDirectionChange = scroll
@@ -141,8 +139,9 @@ export default class extends module {
      * @param {LocomotiveScroll} args - The Locomotive Scroll instance.
      */
     // lazyLoad(args) {
-    //     lazyLoadImage(args.obj.el, null, () => {
-    //         //callback
+    //     lazyLoadImage(args.target, null, () => {
+    //         if(args.target.dataset.depixelate != undefined)
+    //             animDepixelate(args.target)
     //     })
     // }
 }
