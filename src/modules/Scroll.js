@@ -22,6 +22,7 @@ export default class extends module {
     // Lifecyle
     ///////////////
     init() {
+        console.log('init')
         if(html.scrollTop < 80) {
             html.classList.add('is-top')
         } else {
@@ -75,6 +76,7 @@ export default class extends module {
     // Callbacks
     ///////////////
     onScroll({ scroll, limit, velocity, direction, progress }) {
+        console.log(scroll)
         if (progress > this.lastProgress) {
             if (this.scrollDirection != 1) {
                 this.lastDirectionChange = scroll
