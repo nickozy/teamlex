@@ -10,7 +10,7 @@ export default class extends module {
 
         // Binding
         // this.onResizeBind = this.onResize.bind(this)
-        this.onScrollBind = this.onScroll.bind(this)
+        
 
         // Data
         this.scrollDirection = 1
@@ -22,6 +22,7 @@ export default class extends module {
     // Lifecyle
     ///////////////
     init() {
+        this.onScrollBind = this.onScroll.bind(this)
         if(html.scrollTop < 80) {
             html.classList.add('is-top')
         } else {
