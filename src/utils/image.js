@@ -1,47 +1,34 @@
 const LAZY_LOADED_IMAGES = [];
-const LOADED_IMAGES = [];
 
 export function loadImage(url, options = {}) {
   return new Promise((resolve, reject) => {
-    let loadedImage = LOADED_IMAGES.find((image) => image.url === url);
+    const $img = new Image();
 
-    if (loadedImage) {
+    if (options.crossOrigin) {
+      $img.crossOrigin = options.crossOrigin;
+    }
+
+    const loadCallback = () => {
       resolve({
-        ...loadedImage,
-        ...options,
+        element: $img,
+        ...getImageMetadata($img),
       });
-    } else {
-      const $img = new Image();
+    };
 
-      if (options.crossOrigin) {
-        $img.crossOrigin = options.crossOrigin;
-      }
-
-      const loadCallback = () => {
-        const result = {
-          element: $img,
-          ...getImageMetadata($img),
-          ...options,
-        };
-        LOADED_IMAGES.push(result);
-        resolve(result);
-      };
-
-      if ($img.decode) {
-        $img.src = url;
-        $img
-          .decode()
-          .then(loadCallback)
-          .catch((e) => {
-            reject(e);
-          });
-      } else {
-        $img.onload = loadCallback;
-        $img.onerror = (e) => {
+    if ($img.decode) {
+      $img.src = url;
+      $img
+        .decode()
+        .then(loadCallback)
+        .catch((e) => {
           reject(e);
-        };
-        $img.src = url;
-      }
+        });
+    } else {
+      $img.onload = loadCallback;
+      $img.onerror = (e) => {
+        reject(e);
+      };
+      $img.src = url;
     }
   });
 }
@@ -89,14 +76,14 @@ export async function lazyLoadImage($el, url, callback) {
   }
 
   requestAnimationFrame(() => {
-    let lazyParent = $el.closest(".c-image");
+    let lazyParent = $el.closest(".c-lazy");
 
     if (lazyParent) {
-      lazyParent.classList.add("-loaded");
+      lazyParent.classList.add("-lazy-loaded");
       lazyParent.style.backgroundImage = "";
     }
 
-    $el.classList.add("-loaded");
+    $el.classList.add("-lazy-loaded");
 
     callback?.();
   });
