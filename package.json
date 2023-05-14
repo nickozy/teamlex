@@ -24,6 +24,7 @@
     "@studio-freight/lenis": "^1.0.12",
     "babel": "^6.23.0",
     "gsap": "^3.11.5",
+    "locomotive-scroll": "^4.1.4",
     "modujs": "^1.4.2",
     "modularload": "^1.2.8",
     "swiper": "^9.2.3"

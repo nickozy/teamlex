@@ -11,7 +11,6 @@ export default class extends module {
         // Binding
         // this.onResizeBind = this.onResize.bind(this)
         this.onScrollBind = this.onScroll.bind(this)
-        
 
         // Data
         this.scrollDirection = 1
@@ -23,7 +22,6 @@ export default class extends module {
     // Lifecyle
     ///////////////
     init() {
-        
         if(html.scrollTop < 80) {
             html.classList.add('is-top')
         } else {
@@ -140,10 +138,10 @@ export default class extends module {
      *
      * @param {LocomotiveScroll} args - The Locomotive Scroll instance.
      */
-    // lazyLoad(args) {
-    //     lazyLoadImage(args.target, null, () => {
-    //         if(args.target.dataset.depixelate != undefined)
-    //             animDepixelate(args.target)
-    //     })
-    // }
+    lazyLoad(args) {
+        lazyLoadImage(args.target, null, () => {
+            if(args.target.dataset.depixelate != undefined)
+                animDepixelate(args.target)
+        })
+    }
 }
