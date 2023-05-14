@@ -11,7 +11,7 @@ export default class extends module {
 
     init() {
 
-        gsap.delayedCall(1, () => {
+        // gsap.delayedCall(1, () => {
             this.scroll = new LoconativeScroll({
                 el: this.el,
                 smooth: true,
@@ -45,14 +45,14 @@ export default class extends module {
 
             window.scroll = this.scroll;
 
-            gsap.delayedCall(2, () => {
-                this.scroll.update();
-            });
-            gsap.delayedCall(3, () => {
-                this.scroll.update();
-            });
+        //     gsap.delayedCall(2, () => {
+        //         this.scroll.update();
+        //     });
+        //     gsap.delayedCall(3, () => {
+        //         this.scroll.update();
+        //     });
 
-        });
+        // });
 
         html.classList.remove('has-scrolled');
     }
