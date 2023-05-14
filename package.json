@@ -20,8 +20,8 @@
   },
   "homepage": "https://github.com/nickozy/teamlex#readme",
   "dependencies": {
+    "@studio-freight/lenis": "^0.2.6",
     "@barba/core": "^2.9.7",
-    "@studio-freight/lenis": "^1.0.12",
     "babel": "^6.23.0",
     "gsap": "^3.11.5",
     "locomotive-scroll": "^4.1.4",
