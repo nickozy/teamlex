@@ -95,7 +95,7 @@
 
 
 import { module } from 'modujs';
-import { lazyLoadImage, animDepixelate } from '../utils/image';
+import { lazyLoadImage } from '../utils/image';
 import LocomotiveScroll from 'locomotive-scroll';
 import { html } from '../utils/environment'
 import gsap from 'gsap'
