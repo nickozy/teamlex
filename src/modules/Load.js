@@ -24,6 +24,7 @@ export default class extends module {
             this.call('update', newContainer, 'app');
             window.Webflow.ready()
             window.Webflow.require('ix2').init()
+            Webflow.require('lottie').lottie.play()
         })
     }
 }
