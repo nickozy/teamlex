@@ -1,125 +1,88 @@
 import { module } from 'modujs';
 import { lazyLoadImage } from '../utils/image';
 import LocomotiveScroll from 'locomotive-scroll';
-import { html } from '../utils/environment'
-import gsap from 'gsap'
+import { html } from '../utils/environment';
+
+const HEADER_THRESHOLD = 300
 
 export default class extends module {
     constructor(m) {
-        super(m);
+        super(m)
+
+        if (history.scrollRestoration) {
+            history.scrollRestoration = 'manual'
+
+            window.scrollTo(0,0)
+        }
 
         // Binding
-        // this.onResizeBind = this.onResize.bind(this)
+        this.onResizeBind = this.onResize.bind(this)
         this.onScrollBind = this.onScroll.bind(this)
-
-        // Data
-        this.scrollDirection = 1
-        this.lastProgress = 0
-        this.lastDirectionChange = 0
     }
 
     ///////////////
     // Lifecyle
     ///////////////
     init() {
-        if(html.scrollTop < 80) {
-            html.classList.add('is-top')
-        } else {
-            html.classList.remove('is-top')
-        }
-
         // Events
-        // this.bindEvents()
+        this.bindEvents()
 
         // Scroll Instance
-        this.locolenisInstance = new LocomotiveScroll({
-            lenisOptions: {
-                // duration: 1,
-                // smooth: false,
-            },
+        this.locomotiveScrollInstance = new LocomotiveScroll({
+            triggerRootMargin: "-1px -5% -1px -5%",
             scrollCallback: this.onScrollBind,
-            modularInstance: this,
-            initCustomTicker: (render) => {
-                gsap.ticker.add(render);
-            },
-            destroyCustomTicker: (render) => {
-                gsap.ticker.remove(render);
-            }
+            modularInstance: this
         })
 
-        this.locolenisInstance.start()
+        this.locomotiveScrollInstance.start()
+
+        this.onScrollBind
+
+        if(html.scrollTop > HEADER_THRESHOLD) {
+            html.classList.add('has-scrolled')
+        }
     }
 
     destroy() {
         // Events
-        // this.unbindEvents()
+        this.unbindEvents()
 
         // Scroll Instance
-        this.locolenisInstance?.destroy();
-
-        html.classList.remove('is-scrolling-up')
+        this.locomotiveScrollInstance?.destroy()
     }
 
     ///////////////
     // Events
     ///////////////
-    // bindEvents() {
-    //     window.addEventListener("resize", this.onResizeBind)
-    // }
+    bindEvents() {
+        window.addEventListener("resize", this.onResizeBind)
+    }
 
-    // unbindEvents() {
-    //     window.removeEventListener("resize", this.onResizeBind)
-    // }
+    unbindEvents() {
+        window.removeEventListener("resize", this.onResizeBind)
+    }
 
     ///////////////
     // Callbacks
     ///////////////
     onScroll({ scroll, limit, velocity, direction, progress }) {
-        if (progress > this.lastProgress) {
-            if (this.scrollDirection != 1) {
-                this.lastDirectionChange = scroll
-                this.scrollDirection = 1
-                html.style.setProperty('--scroll-direction', this.scrollDirection);
-                html.classList.remove('is-scrolling-up')
-            }
-        } else {
-            if (this.scrollDirection != -1) {
-                this.lastDirectionChange = scroll
-                this.scrollDirection = -1
-                html.style.setProperty('--scroll-direction', this.scrollDirection);
-                html.classList.add('is-scrolling-up')
-            }
+        // Show / Hide fixed header
+        if(scroll > HEADER_THRESHOLD && !html.classList.contains('has-scrolled')) {
+            html.classList.add('has-scrolled')
+        } else if (scroll <= HEADER_THRESHOLD && html.classList.contains('has-scrolled')) {
+            html.classList.remove('has-scrolled')
         }
 
-        if(scroll < 80) {
-            html.classList.add('is-top')
-        } else {
-            html.classList.remove('is-top')
-        }
-
-        window.scroll = { scroll, limit, velocity, direction: this.scrollDirection, progress }
-
-        this.lastProgress = progress
+        // Set global velocity variable
+        // used by ScalingVisual.js
+        window.scrollVelocity = velocity
+        
+        window.scrollDirection = direction
     }
 
-    // onResize() {
-
-    //     console.log(this.locolenisInstance);
-    //     this.locolenisInstance?.resize()
-    // }
-
-    scrollTo(params) {
-        const { target, options } = params;
-        this.locolenisInstance?.scrollTo(target, options);
+    onResize() {
+        this.locomotiveScrollInstance?.resize()
     }
-
-    update() {
-        this.locolenisInstance?.update()
-    }
-
-    ///////////////
-    // Methods
-    ///////////////
 
     /**
      * Lazy load the related image.
@@ -139,7 +102,46 @@ export default class extends module {
      * @param {LocomotiveScroll} args - The Locomotive Scroll instance.
      */
     lazyLoad(args) {
-        lazyLoadImage(args.target, null, () => {
-        })
+        lazyLoadImage(args.target)
+    }
+
+    removeScrollElements($oldContainer) {
+        this.locomotiveScrollInstance?.removeScrollElements($oldContainer)
+    }
+
+    addScrollElements($newContainer) {
+        this.locomotiveScrollInstance?.addScrollElements($newContainer)
+    }
+
+    stop() {
+        this.locomotiveScrollInstance?.stop()
+    }
+
+    start() {
+        this.locomotiveScrollInstance?.start()
+    }
+
+    /**
+     * ScrollTo
+     *
+     * @param {Int, NodeElement or String} target - The scrollTo a target
+     * @param {Object} options - The scrollTo options (offset, duration, easing, immediate)
+     *
+     * @see https://github.com/studio-freight/lenis#methods
+     *
+     */
+    scrollTo(params) {
+        const { target, options } = params
+        this.locomotiveScrollInstance?.lenisInstance?.scrollTo(target, options)
+    }
+
+    // Hide header when footer is in-view
+    hideHeader(args) {
+        if (args.way === 'enter') {
+            html.classList.add('has-header-hidden')
+        }
+        if (args.way === 'leave') {
+            html.classList.remove('has-header-hidden')
+        }
     }
 }
