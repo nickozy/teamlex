@@ -13,13 +13,16 @@ export default class extends module {
             transitions: {
             }
         })
-
+        
+        this.load.on('loading', (transition, oldContainer) => {
+            console.log("old")
+            window.Webflow.destroy()
+        })
+        
         this.load.on('loaded', (transition, oldContainer, newContainer) => {
-            console.log("ww22")
+            console.log("new")
             this.call('destroy', oldContainer, 'app');
             this.call('update', newContainer, 'app');
-            window.Webflow.destroy()
-            window.Webflow.require('ix2').destroy()
             window.Webflow.ready()
             window.Webflow.require('ix2').init()
         })
