@@ -32,7 +32,7 @@ export default class extends module {
         })
 
         this.load.on('loaded', (transition, oldContainer, newContainer) => {
-            console.log("new")
+            console.log("ww")
             this.call('destroy', oldContainer, 'app');
             this.call('update', newContainer, 'app');
         })
