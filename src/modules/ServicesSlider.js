@@ -7,7 +7,11 @@ export default class extends module {
     }
 
     init() {
-        this.swiper = new Swiper(this.el, {
+
+        const el = this.el;
+        const slider = el.querySelector('.swiper');
+        
+        this.swiper = new Swiper(slider, {
         modules: [Navigation],
         speed: 400,
         slidesPerView: "auto",
