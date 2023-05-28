@@ -35,6 +35,9 @@ export default class extends module {
             console.log("ww")
             this.call('destroy', oldContainer, 'app');
             this.call('update', newContainer, 'app');
+            window.Webflow.destroy()
+            window.Webflow.ready()
+            window.Webflow.require('ix2').init()
         })
     }
 }
