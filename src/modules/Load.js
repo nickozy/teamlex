@@ -11,28 +11,11 @@ export default class extends module {
         this.load = new modularLoad({
             enterDelay: 500,
             transitions: {
-                menu: {
-                    enterDelay: 50
-                },
-                articles: {
-                    enterDelay: 500
-                }
-            }
-        })
-
-        this.load.on('loading', (transition, oldContainer) => {
-            if (transition == 'menu') {
-                html.classList.add('menu-loading-transition')
-            }
-
-            if (transition == 'articles') {
-                this.call('removeScrollElements', oldContainer, 'Scroll')
-                this.call('scrollTo', { target: oldContainer.parentNode, options: { duration: 1 } }, 'Scroll')
             }
         })
 
         this.load.on('loaded', (transition, oldContainer, newContainer) => {
-            console.log("ww")
+            console.log("ww2")
             this.call('destroy', oldContainer, 'app');
             this.call('update', newContainer, 'app');
             window.Webflow.destroy()
