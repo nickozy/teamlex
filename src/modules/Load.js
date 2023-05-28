@@ -14,8 +14,9 @@ export default class extends module {
         })
         
         this.load.on('loading', (transition, oldContainer) => {
-            console.log("old")
+            console.log("destroy")
             window.Webflow.destroy()
+            window.Webflow.require('lottie').lottie.destroy()
         })
 
         this.load.on('loaded', (transition, oldContainer, newContainer) => {
