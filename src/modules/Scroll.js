@@ -107,10 +107,13 @@ export default class extends module {
 
     removeScrollElements($oldContainer) {
         this.locomotiveScrollInstance?.removeScrollElements($oldContainer)
+        window.Webflow.destroy()
     }
 
     addScrollElements($newContainer) {
         this.locomotiveScrollInstance?.addScrollElements($newContainer)
+        window.Webflow.ready()
+        window.Webflow.require('ix2').init()
     }
 
     stop() {
