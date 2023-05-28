@@ -2,7 +2,7 @@ import { module } from 'modujs';
 import { lazyLoadImage } from '../utils/image';
 import LocomotiveScroll from 'locomotive-scroll';
 import { html } from '../utils/environment'
-// import gsap from 'gsap'
+import gsap from 'gsap'
 
 export default class extends module {
     constructor(m) {
