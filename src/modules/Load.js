@@ -19,12 +19,12 @@ export default class extends module {
         })
 
         this.load.on('loaded', (transition, oldContainer, newContainer) => {
-            console.log("new")
+            console.log("new lottie")
             this.call('destroy', oldContainer, 'app');
             this.call('update', newContainer, 'app');
             window.Webflow.ready()
             window.Webflow.require('ix2').init()
-            Webflow.require('lottie').lottie.play()
+            window.Webflow.require('lottie').lottie.play()
         })
     }
 }
