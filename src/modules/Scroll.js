@@ -111,8 +111,6 @@ export default class extends module {
 
     addScrollElements($newContainer) {
         this.locomotiveScrollInstance?.addScrollElements($newContainer)
-        window.Webflow.ready($newContainer);
-        window.Webflow.require('ix2').init($newContainer)
     }
 
     stop() {

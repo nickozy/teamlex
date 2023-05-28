@@ -34,22 +34,8 @@ export default class extends module {
         this.load.on('loaded', (transition, oldContainer, newContainer) => {
             this.call('destroy', oldContainer, 'app');
             this.call('update', newContainer, 'app');
+            window.Webflow.ready();
+    window.Webflow.require('ix2').init() 
         })
-
-        this.load.on('ready', (transition, newContainer) => {
-            this.call('close', null, 'ModalMenu')
-
-            setTimeout(() => {
-                this.call('updateCurrentItem', null, 'ModalMenu')
-            }, 400)
-
-            if (transition == 'menu') {
-                html.classList.remove('menu-loading-transition')
-            }
-
-            if (transition == 'articles') {
-                this.call('addScrollElements', newContainer, 'Scroll')
-            }
-        })        
     }
 }
