@@ -34,7 +34,7 @@ export default class extends module {
         this.load.on('loaded', (transition, oldContainer, newContainer) => {
             console.log("update")
             this.call('destroy', oldContainer, 'app');
-            this.call( window.Webflow.destroy(), oldContainer, 'app')
+            this.call(window.Webflow.destroy(), oldContainer, 'app')
             this.call('update', newContainer, 'app');
             this.call(window.Webflow.ready(), newContainer, 'app')
             this.call(window.Webflow.require('ix2').init() , newContainer, 'app')
