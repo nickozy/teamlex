@@ -1,5 +1,5 @@
 import { module } from 'modujs';
-import { Swiper } from 'swiper';
+import  Swiper, {Navigation} from 'swiper';
 
 export default class extends module {
     constructor(m) {
@@ -8,10 +8,11 @@ export default class extends module {
 
     init() {
         this.swiper = new Swiper(this.el, {
-      speed: 400,
-      slidesPerView: "auto",
-      spaceBetween: 0,
-      navigation: {
+        modules: [Navigation],
+        speed: 400,
+        slidesPerView: "auto",
+        spaceBetween: 0,
+        navigation: {
         nextEl: ".arrow-nav__btn.is-next",
         prevEl: ".arrow-nav__btn.is-prev",
       },
