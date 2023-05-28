@@ -12,8 +12,8 @@ export default class extends module {
       slidesPerView: "auto",
       spaceBetween: 0,
       navigation: {
-        nextEl: ".arrow-nav__btn.is-prev",
-        prevEl: ".arrow-nav__btn.is-next",
+        nextEl: ".arrow-nav__btn.is-next",
+        prevEl: ".arrow-nav__btn.is-prev",
       },
     });
     }   
