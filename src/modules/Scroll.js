@@ -28,10 +28,21 @@ export default class extends module {
         // Events
         this.bindEvents()
 
-console.log("scroll init")
+console.log("lenis init")
 
         // Scroll Instance
         this.locomotiveScrollInstance = new LocomotiveScroll({
+            lenisOptions:{
+                duration: 1.2,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
+                direction: 'vertical', // vertical, horizontal
+                gestureDirection: 'vertical', // vertical, horizontal, both
+                smooth: true,
+                mouseMultiplier: 1,
+                smoothTouch: false,
+                touchMultiplier: 2,
+
+            },
             triggerRootMargin: "-1px -5% -1px -5%",
             scrollCallback: this.onScrollBind,
             modularInstance: this,

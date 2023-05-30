@@ -53,8 +53,12 @@ a {
   display: block !important;
 }
 
-html {
-  scroll-behavior: initial;
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+html.lenis {
+  height: auto;
 }
 
 @media screen and (max-width: 767px) {
