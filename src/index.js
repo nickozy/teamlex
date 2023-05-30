@@ -29,12 +29,6 @@ window.onload = (event) => {
   }
 };
 
-window.addEventListener("DOMContentLoaded", () => {
-  console.log("laoded");
-  fsAttributes.cmsfilter.destroy();
-  fsAttributes.cmsfilter.init();
-});
-
 function init() {
   app.init(app);
 
@@ -42,3 +36,9 @@ function init() {
   html.classList.add("is-ready");
   html.classList.remove("is-loading");
 }
+
+window.addEventListener("load", () => {
+  console.log("laoded");
+  fsAttributes.cmsfilter.destroy();
+  fsAttributes.cmsfilter.init();
+});
