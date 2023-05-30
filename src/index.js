@@ -44,6 +44,7 @@ window.onload = (event) => {
                 $fs5.addEventListener("load", (event) => {
                   $fs6.addEventListener("load", (event) => {
                     $fs7.addEventListener("load", (event) => {
+                      console.log("initial");
                       init();
                     });
                   });
