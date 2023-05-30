@@ -26,6 +26,7 @@ export default class extends module {
             window.Webflow.ready()
             window.Webflow.require('ix2').init()
             window.Webflow.require('lottie').lottie.play()
+            fsAttributes.cmsfilter.init()
         })
     }
 }
