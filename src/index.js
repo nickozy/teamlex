@@ -37,7 +37,7 @@ function init() {
   html.classList.remove("is-loading");
 }
 
-window.addEventListener("load", () => {
+document.addEventListener("load", () => {
   console.log("laoded");
   fsAttributes.cmsfilter.destroy();
   fsAttributes.cmsfilter.init();
