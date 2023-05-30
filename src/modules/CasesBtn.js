@@ -6,8 +6,11 @@ export default class extends module {
     }
     init(){
         const btn = this.el;
+
         const wrapper = document.querySelector(".our-cases__nav-wrapper");
+
         const text = document.querySelector(".our-cases__show-text")
+        
             btn.addEventListener("click", () => {
                 wrapper.classList.toggle("is-open");
             btn.classList.toggle("is-open");
