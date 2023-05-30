@@ -15,9 +15,25 @@ const app = new modular({
 
 window.onload = (event) => {
   const $style = document.getElementById("main-css");
+  const $fs1 = document.getElementById("fs1");
+  const $fs2 = document.getElementById("fs2");
+  const $fs3 = document.getElementById("fs3");
+  const $fs4 = document.getElementById("fs4");
+  const $fs5 = document.getElementById("fs5");
+  const $fs6 = document.getElementById("fs6");
+  const $fs7 = document.getElementById("fs7");
 
-  if ($style) {
-    if ($style.isLoaded) {
+  if ($style && $fs1 && $fs2 && $fs3 && $fs4 && $fs5 && $fs6 && $fs7) {
+    if (
+      $style.isLoaded &&
+      $fs1.isLoaded &&
+      $fs2.isLoaded &&
+      $fs3.isLoaded &&
+      $fs4.isLoaded &&
+      $fs5.isLoaded &&
+      $fs6.isLoaded &&
+      $fs7.isLoaded
+    ) {
       init();
     } else {
       $style.addEventListener("load", (event) => {
