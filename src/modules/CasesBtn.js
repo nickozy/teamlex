@@ -10,7 +10,7 @@ export default class extends module {
         const wrapper = document.querySelector(".our-cases__nav-wrapper");
 
         const text = document.querySelector(".our-cases__show-text")
-        
+
             btn.addEventListener("click", () => {
                 wrapper.classList.toggle("is-open");
             btn.classList.toggle("is-open");
@@ -18,7 +18,8 @@ export default class extends module {
             text.innerHTML = "Hide all tags";
             } else {
             text.innerHTML = "Show all tags";
-            }}
+            }
+        }
         );
     }
 }
