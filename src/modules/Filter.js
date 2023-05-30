@@ -7,6 +7,7 @@ export default class extends module {
     }
 
     init() {
+        console.log('fs')
         fsAttributes.cmsfilter.destroy()
         fsAttributes.cmsfilter.init()
     }
