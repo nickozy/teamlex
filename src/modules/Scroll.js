@@ -2,6 +2,7 @@ import { module } from 'modujs';
 import { lazyLoadImage } from '../utils/image';
 import LocomotiveScroll from 'locomotive-scroll';
 import { html } from '../utils/environment';
+import gsap from 'gsap'
 
 const HEADER_THRESHOLD = 300
 
@@ -31,7 +32,13 @@ export default class extends module {
         this.locomotiveScrollInstance = new LocomotiveScroll({
             triggerRootMargin: "-1px -5% -1px -5%",
             scrollCallback: this.onScrollBind,
-            modularInstance: this
+            modularInstance: this,
+            initCustomTicker: (render) => {
+                gsap.ticker.add(render);
+            },
+            destroyCustomTicker: (render) => {
+                gsap.ticker.remove(render);
+            }
         })
 
         this.locomotiveScrollInstance.start()
