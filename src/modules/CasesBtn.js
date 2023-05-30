@@ -3,13 +3,18 @@ import { module } from 'modujs';
 export default class extends module {
     constructor(m) {
         super(m);
+        this.events = {
+            click: {
+              openFilter: 'click',
+            }
+          }
     }
-    init(){
+    click(){
         const btn = this.el;
 
         const wrapper = document.querySelector(".our-cases__nav-wrapper");
 
-        const text = document.querySelector(".our-cases__show-text")
+        const text = btn.querySelector(".our-cases__show-text")
 
             btn.addEventListener("click", () => {
                 wrapper.classList.toggle("is-open");
