@@ -37,7 +37,21 @@ window.onload = (event) => {
       init();
     } else {
       $style.addEventListener("load", (event) => {
-        init();
+        $fs1.addEventListener("load", (event) => {
+          $fs2.addEventListener("load", (event) => {
+            $fs3.addEventListener("load", (event) => {
+              $fs4.addEventListener("load", (event) => {
+                $fs5.addEventListener("load", (event) => {
+                  $fs6.addEventListener("load", (event) => {
+                    $fs7.addEventListener("load", (event) => {
+                      init();
+                    });
+                  });
+                });
+              });
+            });
+          });
+        });
       });
     }
   } else {
