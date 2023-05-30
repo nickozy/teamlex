@@ -36,9 +36,3 @@ function init() {
   html.classList.add("is-ready");
   html.classList.remove("is-loading");
 }
-
-window.addEventListener("load", () => {
-  console.log("laoded");
-  fsAttributes.cmsfilter.destroy();
-  fsAttributes.cmsfilter.init();
-});
