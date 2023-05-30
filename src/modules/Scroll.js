@@ -28,6 +28,8 @@ export default class extends module {
         // Events
         this.bindEvents()
 
+console.log("scroll init")
+
         // Scroll Instance
         this.locomotiveScrollInstance = new LocomotiveScroll({
             triggerRootMargin: "-1px -5% -1px -5%",
