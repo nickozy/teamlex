@@ -1,4 +1,4 @@
-import Swiper from "swiper";
+import  Swiper, {Navigation} from 'swiper';
 import { module } from 'modujs';
 
 export default class extends module {
@@ -9,6 +9,7 @@ export default class extends module {
     init() {
         const el = this.el
         this.swiper = new Swiper(el.querySelector('.case-solution__cases-collection'), {
+        modules: [Navigation],
         speed: 400,
         slidesPerView: "auto",
         wrapperClass: "case-solution__cases-list",
