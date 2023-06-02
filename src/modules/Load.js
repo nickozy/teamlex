@@ -23,10 +23,14 @@ export default class extends module {
             console.log("new lottie")
             this.call('destroy', oldContainer, 'app');
             this.call('update', newContainer, 'app');
+         
+        })
+        this.load.on('loaded', (transition, oldContainer, newContainer) => {
             window.Webflow.ready()
             window.Webflow.require('ix2').init()
             window.Webflow.require('lottie').lottie.play()
             fsAttributes.cmsfilter.init()
+            fsAttributes.cmsprevnext.init()
         })
     }
 }
