@@ -12,12 +12,13 @@ export default class extends module {
         modules: [Autoplay],
         speed: 400,
         direction: 'vertical',
-        slidesPerView: 1,
+        slidesPerView: 'auto',
         autoplay: {
             delay: 2000,
             disableOnInteraction: false,
           },
           loop: true,
+          loopedSlides: 8,
         });
     }
 }
