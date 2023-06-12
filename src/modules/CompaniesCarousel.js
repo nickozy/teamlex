@@ -16,7 +16,6 @@ export default class extends module {
         autoplay: {
             delay: 2000,
             disableOnInteraction: false,
-            reverseDirection: true,
           },
         });
     }
