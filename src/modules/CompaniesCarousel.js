@@ -18,7 +18,7 @@ export default class extends module {
             disableOnInteraction: false,
           },
           loop: true,
-          loopedSlides: 8,
+          loopedSlides: 4,
         });
     }
 }
