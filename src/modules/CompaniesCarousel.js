@@ -17,8 +17,8 @@ export default class extends module {
             delay: 2000,
             disableOnInteraction: false,
           },
-          loop: true,
-          loopedSlides: 4,
+          rewind: true,
+
         });
     }
 }
