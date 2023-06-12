@@ -15,6 +15,8 @@ export default class extends module {
         slidesPerView: 1,
         autoplay: {
             delay: 2000,
+            disableOnInteraction: false,
+            reverseDirection: true,
           },
         });
     }
