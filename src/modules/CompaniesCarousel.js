@@ -15,7 +15,7 @@ export default class extends module {
         autoplay: {
             delay: 5000,
           },
-          loop: true,
+        //   loop: true,
         });
     }
 }
