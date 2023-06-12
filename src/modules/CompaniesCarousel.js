@@ -11,7 +11,7 @@ export default class extends module {
         this.swiper = new Swiper(el, {
         speed: 400,
         direction: 'vertical',
-        slidesPerView: 4,
+        slidesPerView: 'auto',
         autoplay: {
             delay: 5000,
           },
