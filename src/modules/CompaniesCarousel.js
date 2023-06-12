@@ -12,6 +12,9 @@ export default class extends module {
         speed: 400,
         direction: 'vertical',
         slidesPerView: "auto",
+        autoplay: {
+            delay: 5000,
+          },
         });
     }
 }
