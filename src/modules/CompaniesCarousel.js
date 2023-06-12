@@ -12,7 +12,7 @@ export default class extends module {
         modules: [Autoplay],
         speed: 400,
         direction: 'vertical',
-        slidesPerView: 'auto',
+        slidesPerView: 1,
         autoplay: {
             delay: 2000,
             disableOnInteraction: false,
