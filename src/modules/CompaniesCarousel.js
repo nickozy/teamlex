@@ -1,4 +1,4 @@
-import  Swiper from 'swiper';
+import  Swiper, {Autoplay} from 'swiper';
 import { module } from 'modujs';
 
 export default class extends module {
@@ -9,6 +9,7 @@ export default class extends module {
     init() {
         const el = this.el
         this.swiper = new Swiper(el, {
+        modules: [Autoplay],
         speed: 400,
         direction: 'vertical',
         slidesPerView: 1,
