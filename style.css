@@ -1181,3 +1181,15 @@ html.is-loading .o-loader {
 [data-page="blog"] body {
   background-color: #ffedfd !important;
 }
+
+/* ---------- COMPANIES SLIDER ---------- */
+
+.swiper-slide.companies__list-item.swiper-slide-next {
+  transform: scale(0.7);
+}
+.swiper-slide.companies__list-item.swiper-slide-next
+  ~ .swiper-slide.companies__list-item {
+  transform: scale(0.4);
+}
+
+/* ---------- >COMPANIES SLIDER ---------- */
