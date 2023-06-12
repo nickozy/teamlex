@@ -13,7 +13,7 @@ export default class extends module {
         direction: 'vertical',
         slidesPerView: 1,
         autoplay: {
-            delay: 5000,
+            delay: 2000,
           },
           loop: true,
         });
