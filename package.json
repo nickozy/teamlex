@@ -24,13 +24,25 @@
     "@studio-freight/lenis": "^0.2.6",
     "babel": "^6.23.0",
     "gsap": "^3.11.5",
-    "locomotive-scroll": "^5.0.0-beta.7",
+    "locomotive-scroll": "^5.0.0-beta.8",
     "modujs": "^1.4.2",
     "modularload": "^1.2.8",
     "swiper": "^9.2.3"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "css-loader": "^6.8.1",
+    "css-minimizer-webpack-plugin": "^5.0.0",
     "http-server": "^14.1.1",
+    "mini-css-extract-plugin": "^2.7.6",
+    "optimize-css-assets-webpack-plugin": "^4.0.0",
+    "postcss": "^8.4.24",
+    "postcss-loader": "^7.3.3",
+    "postcss-preset-env": "^8.5.0",
+    "sass": "^1.63.4",
+    "sass-loader": "^13.3.2",
+    "style-loader": "^3.3.3",
+    "terser-webpack-plugin": "^5.3.9",
     "webpack": "^5.80.0",
     "webpack-cli": "^5.0.1"
   }
