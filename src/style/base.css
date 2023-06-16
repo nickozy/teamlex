@@ -54,7 +54,7 @@ a {
 }
 
 .lenis.lenis-smooth {
-  scroll-behavior: auto;
+  scroll-behavior: auto !important;
 }
 
 html.lenis {
