@@ -1,0 +1,16 @@
+/* --------- LAZY LOAD EFFECT --------- */
+
+.c-image_inner {
+  background-size: cover;
+  background-position: center;
+}
+
+.c-image_img {
+  opacity: 0;
+  transition: opacity 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.c-image_img.-lazy-loaded {
+  opacity: 1;
+}
+
+/* --------->LAZY LOAD EFFECT --------- */

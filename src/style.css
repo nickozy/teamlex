@@ -1,1 +1,6 @@
 @import url(./style/base.css);
+@import url(./style/lazyload.css);
+@import url(./style/blog-page.css);
+@import url(./style/hero-page.css);
+@import url(./style/pricing-page.css);
+@import url(./style/cases-page.css);
