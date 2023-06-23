@@ -1,0 +1,16 @@
+/* -------- FOOTER -------- */
+
+.footer a {
+  text-decoration: none;
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+.footer-list a:hover {
+  color: #ffd955;
+}
+
+.footer-down__wrapper a:hover {
+  opacity: 1;
+}
+
+/* -------- >FOOTER -------- */

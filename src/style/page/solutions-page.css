@@ -1,0 +1,130 @@
+.featured__nav-divider {
+  background-color: currentColor;
+}
+
+/* ---------- SOLUTUIONS CARD ---------- */
+
+.services-practies__heading-top ~ p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  line-clamp: 3;
+  box-orient: vertical;
+}
+
+.services-practies__item:hover .arrow-btn {
+  color: #fff3d2;
+  transform: scale(1.1);
+}
+
+.services-practies__item:hover .arrow {
+  transform: translateX(10%) translateY(-10%);
+}
+
+.services-practies__item a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.services-practies__item .case-result__block h3 {
+  font-size: 2.08rem;
+  line-height: 1;
+  font-weight: 700;
+  color: inherit;
+}
+
+.services-practies__item .case-result__block p {
+  font-size: 0.83rem;
+  line-height: 1;
+  font-weight: 400;
+  opacity: 0.6;
+}
+
+.services-practies__item .case-result__block {
+  display: none;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.services-practies__item .case-result__block:nth-child(-n + 2) {
+  display: block;
+}
+
+.services-practies__item .case-result__block:nth-child(1) {
+  padding-right: 1.5rem;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.services-practies__item .case-result__block:nth-child(2) {
+  padding-left: 1.5rem;
+}
+
+.services-practies__item .case-result__block-wrapper {
+  display: flex;
+  margin-top: 2.78rem;
+}
+
+@media screen and (max-width: 767px) {
+  .services-practies__item .case-result__block:nth-child(1) {
+    border-right: none;
+    padding-bottom: 2.67rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .services-practies__item .case-result__block-wrapper {
+    display: flex;
+    margin-top: 10.67rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    grid-row-gap: 2.67rem;
+  }
+
+  .services-practies__item .case-result__block {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    grid-row-gap: 1.6rem;
+    border-right-style: none;
+  }
+
+  .services-practies__item .case-result__block h3 {
+    font-size: 4.8rem;
+    line-height: 1.2;
+  }
+
+  .services-practies__item .case-result__block p {
+    font-size: 2.67rem;
+    line-height: 1.4;
+  }
+}
+
+/* ---------- >SOLUTUIONS CARD ---------- */
+
+/* ---------- SOLUTUIONS ---------- */
+.section-services-client__marque {
+  animation: infiniteMarque 50s linear infinite;
+}
+
+.services-practies-wrapper__item:last-child {
+  border: none;
+  padding: 0;
+}
+
+.swiper-slide:last-child {
+  margin-right: 0;
+}
+.swiper-slide-shadow {
+  background: none !important;
+}
+
+/* ---------- >SOLUTUIONS ---------- */

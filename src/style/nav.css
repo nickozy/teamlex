@@ -1,0 +1,55 @@
+/* --------- NAV ----------- */
+
+.w-dropdown-link.w--current {
+  color: #222;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.nav__btn-line {
+  background-color: currentColor;
+}
+
+.nav__dropdown-toggle {
+  color: inherit;
+}
+
+.nav__dropdown-list.w--open {
+  display: grid;
+}
+
+.m-nav a {
+  text-decoration: none;
+}
+
+.arrow-btn {
+  pointer-events: none;
+}
+
+.nav__link {
+  position: relative;
+}
+
+.nav__link.w--current::before {
+  content: "";
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  bottom: -0.6rem;
+  width: 0.4rem;
+  height: 0.4rem;
+  background-color: currentColor;
+  border-radius: 100%;
+  animation: currentPage 0.6s ease forwards;
+}
+
+@keyframes currentPage {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+/* --------- >NAV --------- */

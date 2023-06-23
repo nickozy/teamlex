@@ -1,6 +1,14 @@
 @import url(./style/base.css);
+@import url(./style/footer.css);
+@import url(./style/nav.css);
 @import url(./style/lazyload.css);
-@import url(./style/blog-page.css);
-@import url(./style/hero-page.css);
-@import url(./style/pricing-page.css);
-@import url(./style/cases-page.css);
+@import url(./style/loader.css);
+
+/* ---------- PAGE ---------- */
+
+@import url(./style/page/hero-page.css);
+@import url(./style/page/blog-page.css);
+@import url(./style/page/pricing-page.css);
+@import url(./style/page/cases-page.css);
+@import url(./style/page/solutions-page.css);
+@import url(./style/page/contacts-page.css);

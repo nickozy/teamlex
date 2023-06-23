@@ -110,3 +110,45 @@
 }
 
 /* ---------- >CASES CHARTS ---------- */
+
+.case-result__block:last-child {
+  margin-bottom: 0;
+}
+
+.case-project__left-list-item:nth-child(-n + 2) {
+  border-top: none;
+}
+
+.case-solution__cases-img:last-child {
+  margin-right: 0;
+}
+
+.cases-other__btn:has(a) {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.cases-other__btn {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.arrow-nav__btn:hover .arrow-nav__arrow {
+  color: #fff !important;
+}
+
+#chart:hover .chart-section {
+  opacity: 0.3;
+}
+
+.chart-section:hover {
+  opacity: 1 !important;
+}
+
+.case-project__left-list:hover .case-project__left-list-item {
+  opacity: 0.3;
+}
+
+.case-project__left-list-item:hover {
+  opacity: 1 !important;
+}
